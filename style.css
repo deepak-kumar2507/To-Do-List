@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg,#e67105,#0fee08);
+}
+#wrapper{
+    width: 35%;
+    margin: 0 auto;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    padding: 50px;
+    color: #fff;
+    background: radial-gradient(#eb7c14,#0a0281);
+}
+#wrapper h1{
+    text-transform: uppercase;
+    margin-bottom: 5%;
+}
+#single-task{
+    width: 250px;
+    padding: 15px;
+}
+button{
+    background: linear-gradient(45deg,#45025f,#0af5e9);
+    border: none;
+    color: #fff;
+    padding: 13px 18px;
+    font-size: 18px;
+}
+.task{
+    margin-bottom: 5px;
+    margin-top: 20px;
+    background: #fff;
+    color: #000;
+    list-style: none;
+    padding: 0 15px;
+    line-height: 35px;
+}
+.task input[type="checkbox"]{
+    display: none;
+}
+.task .delete{
+    color: red;
+    cursor: pointer;
+    font-size: 30px;
+    margin: 0;
+    float: right;
+}

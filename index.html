@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- divinectorweb.com -->
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Create To-Do list using javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>To Do List</h1>
+        <form id="task-area">
+            <input type="text" id="single-task" placeholder="Add a new task...">
+            <button type="submit">Add</button>
+        </form>
+        <ul id="tasks"></ul>
+    </div>
+
+    <script>
+        const A = document.getElementById('task-area');
+const B = document.getElementById('single-task');
+const C = document.getElementById('tasks'); 
+
+//Add a new task to the list
+
+function addTask(event) {
+    event.preventDefault();
+    if (B.value === '') return;
+    const task = createTask(B.value);
+    C.appendChild(task);
+    B.value = '';
+}
+
+//Create a new task element
+
+function createTask(taskName) {
+    const task = document.createElement('li');
+    task.classList.add('task');
+    task.innerHTML = `
+        <input type="checkbox">
+        <label>${taskName}</label>
+        <span class="delete">×</span>
+    `;
+
+    //Add a delete button
+
+    const deleteButton = task.querySelector('.delete');
+    deleteButton.addEventListener('click', deleteTask);
+
+    return task;
+}
+
+//Delete a task from the list
+
+function deleteTask(event) {
+    event.target.parentElement.remove();
+}
+
+A.addEventListener('submit', addTask);
+    </script>
+</body>
+</html>
